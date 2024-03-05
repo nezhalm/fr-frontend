@@ -1,0 +1,9 @@
+/* Couleur par défaut */
+.text-color-change {
+  color: white;
+}
+
+/* Couleur lors du défilement */
+.scrolled .text-color-change {
+  color: black;
+}
