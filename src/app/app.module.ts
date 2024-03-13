@@ -3,16 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { CompanyDetailsComponent } from './company-details/company-details.component';
-import { CompanyOffersComponent } from './company-offers/company-offers.component';
-import { CompanyChatComponent } from './company-chat/company-chat.component';
-import { CandidatHomeComponent } from './candidat-home/candidat-home.component';
-import { CandidateUpplyComponent } from './candidate-upply/candidate-upply.component';
-import { LoginComponent } from './login/login.component';
-import { CreateProfileComponent } from './create-profile/create-profile.component';
-import { ScrollDirective } from './home/scroll.directive';
-import { RegisterComponent } from './register/register.component';
+import {HomeComponent} from "./components/home/home.component";
+import {CompanyDetailsComponent} from "./components/company-details/company-details.component";
+import {CompanyOffersComponent} from "./components/company-offers/company-offers.component";
+import {CompanyChatComponent} from "./components/company-chat/company-chat.component";
+import {CandidatHomeComponent} from "./components/candidat-home/candidat-home.component";
+import {CandidateUpplyComponent} from "./components/candidate-upply/candidate-upply.component";
+import {LoginComponent} from "./components/login/login.component";
+import {CreateProfileComponent} from "./components/create-profile/create-profile.component";
+import {ScrollDirective} from "./components/home/scroll.directive";
+import {RegisterComponent} from "./components/register/register.component";
+import { Error404Component } from './components/error-404/error-404.component';
+import { AllOffersComponent } from './components/all-offers/all-offers.component';
+import { AllCompanyOffersComponent } from './components/all-company-offers/all-company-offers.component';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +30,10 @@ import { RegisterComponent } from './register/register.component';
     LoginComponent,
     CreateProfileComponent,
     ScrollDirective,
-    RegisterComponent
+    RegisterComponent,
+    Error404Component,
+    AllOffersComponent,
+    AllCompanyOffersComponent
   ],
   imports: [
     BrowserModule,

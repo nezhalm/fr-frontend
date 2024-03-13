@@ -3,6 +3,11 @@
   color: white;
 }
 
+.but{
+  background: linear-gradient(90deg, #62240d 0%, #ff5900 100%);
+
+}
+
 /* Couleur lors du défilement */
 .scrolled .text-color-change {
   color: black;
