@@ -16,6 +16,8 @@ import {RegisterComponent} from "./components/register/register.component";
 import { Error404Component } from './components/error-404/error-404.component';
 import { AllOffersComponent } from './components/all-offers/all-offers.component';
 import { AllCompanyOffersComponent } from './components/all-company-offers/all-company-offers.component';
+import {FormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -35,10 +37,12 @@ import { AllCompanyOffersComponent } from './components/all-company-offers/all-c
     AllOffersComponent,
     AllCompanyOffersComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule ,// Ajoutez HttpClientModule aux imports
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

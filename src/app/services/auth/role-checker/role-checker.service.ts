@@ -9,7 +9,7 @@ export class RoleCheckerService {
 
   constructor(private jwtStorageService: JwtStorageService) {}
 
-  isCandidate(): boolean {
+  isCandidat(): boolean {
     const user = this.jwtStorageService.getUser();
     return !!user && user.role === Role.CANDIDAT;
   }

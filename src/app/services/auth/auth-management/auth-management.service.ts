@@ -12,7 +12,7 @@ import {JwtStorageService} from "../../jwt/jwt-storage.service";
 })
 export class AuthManagementService {
 
-  private MANAGER_AUTH_API: string = 'http://localhost:8080/api/auth';
+  private MANAGER_AUTH_API: string = 'http://localhost:8081/api/auth';
   private httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
@@ -26,7 +26,7 @@ export class AuthManagementService {
     else { return false }
   }
 
-  public authenticate(loginRequest: LoginRequest): Observable<AuthResponse> {
+  public login(loginRequest: LoginRequest): Observable<AuthResponse> {
     return this.http.post<AuthResponse>(
       `${this.MANAGER_AUTH_API}/login`, loginRequest, this.httpOptions
     )
