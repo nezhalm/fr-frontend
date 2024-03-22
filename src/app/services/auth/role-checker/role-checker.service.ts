@@ -16,7 +16,7 @@ export class RoleCheckerService {
 
   isCompany(): boolean {
     const user = this.jwtStorageService.getUser();
-    return !!user && user.role === Role.COMPANY;
+    return !!user && user.role === Role.RECRUITER;
   }
 
 

@@ -18,6 +18,8 @@ import { AllOffersComponent } from './components/all-offers/all-offers.component
 import { AllCompanyOffersComponent } from './components/all-company-offers/all-company-offers.component';
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import {AuthInterceptorProvider} from "./interceptors/auth.interceptor";
+import { OfferApplicationsComponent } from './components/offer-applications/offer-applications.component';
 
 
 @NgModule({
@@ -35,7 +37,8 @@ import {HttpClientModule} from "@angular/common/http";
     RegisterComponent,
     Error404Component,
     AllOffersComponent,
-    AllCompanyOffersComponent
+    AllCompanyOffersComponent,
+    OfferApplicationsComponent
   ],
     imports: [
         BrowserModule,
@@ -43,7 +46,8 @@ import {HttpClientModule} from "@angular/common/http";
         HttpClientModule ,// Ajoutez HttpClientModule aux imports
         FormsModule
     ],
-  providers: [],
+  providers: [AuthInterceptorProvider],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

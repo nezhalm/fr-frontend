@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {CanActivate, Router} from '@angular/router';
-import {RoleCheckerService} from "../services/auth/role-checker/role-checker.service";
 import {AuthManagementService} from "../services/auth/auth-management/auth-management.service";
 
 @Injectable({

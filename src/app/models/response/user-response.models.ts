@@ -2,14 +2,13 @@ import {Role} from "../../enums/role.enums";
 import {IdentityDocumentType} from "../../enums/identity-document-type.enums";
 
 export interface UserResponse {
-  num: number;
-  name: string;
-  familyName: string;
+  id: number;
   username: string;
+  email: string;
   role: Role;
-  activated: boolean;
-  accessionDate: string;
-  nationality: string;
-  identityDocument: IdentityDocumentType;
-  identityNumber: string;
+  firstName: string;
+  lastName: string;
+  phone: string;
+  enabled: boolean;
+  profile: string;
 }
