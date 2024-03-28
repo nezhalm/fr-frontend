@@ -20,6 +20,7 @@ import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {AuthInterceptorProvider} from "./interceptors/auth.interceptor";
 import { OfferApplicationsComponent } from './components/offer-applications/offer-applications.component';
+import { CreateOfferComponent } from './components/create-offer/create-offer.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { OfferApplicationsComponent } from './components/offer-applications/offe
     Error404Component,
     AllOffersComponent,
     AllCompanyOffersComponent,
-    OfferApplicationsComponent
+    OfferApplicationsComponent,
+    CreateOfferComponent
   ],
     imports: [
         BrowserModule,

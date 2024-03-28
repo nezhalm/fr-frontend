@@ -12,6 +12,7 @@ import {CandidateUpplyComponent} from "./components/candidate-upply/candidate-up
 import {CandidatAuthGuard} from "./guards/candidat-auth.guard";
 import {CompanyAuthGuard} from "./guards/company-auth.guard";
 import {OfferApplicationsComponent} from "./components/offer-applications/offer-applications.component";
+import {CreateOfferComponent} from "./components/create-offer/create-offer.component";
 
 const routes: Routes = [
    {path: "login", component: LoginComponent, canActivate: [NoAuthGuard] },
@@ -23,6 +24,7 @@ const routes: Routes = [
    {path: 'company-offers', component: CompanyOffersComponent, canActivate: [CompanyAuthGuard]},
    {path: 'create-profile/:id', component: CandidateUpplyComponent, canActivate: [CandidatAuthGuard]},
   {path: 'details-condidats/:id', component: OfferApplicationsComponent, canActivate: [CompanyAuthGuard]},
+  {path: 'create-offer', component: CreateOfferComponent, canActivate: [CompanyAuthGuard]},
 
   // {path: 'formQuiz', component: FormQuizComponent},
 ];

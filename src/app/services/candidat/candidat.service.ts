@@ -18,4 +18,6 @@ export class CandidatService {
   getAllCandidates(): Observable<any[]> {
     return this.http.get<any[]>(`${this.apiUrl}/candidat/list`);
   }
+
+
 }

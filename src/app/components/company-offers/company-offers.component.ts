@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import { EntrepriseService } from "../../services/entreprise/entreprise.service";
 import { JwtStorageService } from "../../services/jwt/jwt-storage.service";
 import {OfferService} from "../../services/offer/offer.service";
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-company-offers',
@@ -42,16 +43,38 @@ export class CompanyOffersComponent implements OnInit {
     this.router.navigate(['/login']);
   }
   deleteOffer(offerId: number): void {
-    this.offerService.deleteOffer(offerId).subscribe(
-      () => {
-        this.router.navigate(['/company-offers']);
-
-        console.log(`L'offre avec l'ID ${offerId} a été supprimée avec succès.`);
-      },
-      (error) => {
-        console.error(`Erreur lors de la suppression de l'offre avec l'ID ${offerId}:`, error);
+    Swal.fire({
+      title: 'Êtes-vous sûr de vouloir supprimer cette offre ?',
+      text: 'Cette action est irréversible !',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Oui, supprimer',
+      cancelButtonText: 'Annuler'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.offerService.deleteOffer(offerId).subscribe(
+          () => {
+            this.router.navigate(['/company-offers']);
+            Swal.fire(
+              'Supprimé !',
+              `L'offre avec l'ID ${offerId} a été supprimée avec succès.`,
+              'success'
+            );
+          },
+          (error) => {
+            console.error(`Erreur lors de la suppression de l'offre avec l'ID ${offerId}:`, error);
+            Swal.fire(
+              'Erreur !',
+              `Une erreur est survenue lors de la suppression de l'offre avec l'ID ${offerId}.`,
+              'error'
+            );
+          }
+        );
       }
-    );
+    });
   }
 
+  goToView(): void {
+    this.router.navigate(['/create-offer']);
+  }
 }
