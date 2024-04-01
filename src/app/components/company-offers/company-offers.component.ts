@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import { EntrepriseService } from "../../services/entreprise/entreprise.service";
 import { JwtStorageService } from "../../services/jwt/jwt-storage.service";
 import {OfferService} from "../../services/offer/offer.service";
 import Swal from 'sweetalert2';
-
+import {LocationStrategy} from "@angular/common";
 @Component({
   selector: 'app-company-offers',
   templateUrl: './company-offers.component.html',
@@ -15,7 +14,10 @@ export class CompanyOffersComponent implements OnInit {
   constructor(
     private offerService: OfferService,
     private jwtStorageService: JwtStorageService,
-    private router: Router
+    private router: Router,
+    private locationStrategy: LocationStrategy
+
+
   ) {}
 
   ngOnInit(): void {
@@ -60,6 +62,8 @@ export class CompanyOffersComponent implements OnInit {
               `L'offre avec l'ID ${offerId} a été supprimée avec succès.`,
               'success'
             );
+            location.reload();
+
           },
           (error) => {
             console.error(`Erreur lors de la suppression de l'offre avec l'ID ${offerId}:`, error);
@@ -73,7 +77,6 @@ export class CompanyOffersComponent implements OnInit {
       }
     });
   }
-
   goToView(): void {
     this.router.navigate(['/create-offer']);
   }

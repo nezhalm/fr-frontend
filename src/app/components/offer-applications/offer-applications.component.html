@@ -211,8 +211,8 @@
           <a href="C:/Users/HPr/Downloads/last_version_cv.pdf" download="last_version_cv.pdf" href="#" class="px-4 py-2 pb-4 hover:bg-gray-100 flex">
             <p class="text-sm font-medium text-gray-800 leading-none">Upload CV</p>
           </a>
-          <a href="#" class="px-4 py-2 pb-4 hover:bg-gray-100 flex">
-            <p class="text-sm font-medium text-gray-800 leading-none">Status updates</p>
+          <a href="#" [routerLink]="'/recruiter-chat'" [queryParams]="{ senderId: 1, recipientId: candidate.id ,offerId : candidate.offer.id }" class="px-4 py-2 pb-4 hover:bg-gray-100 flex">
+            <p class="text-sm font-medium text-gray-800 leading-none">Send Message</p>
           </a>
           <a href="#" class="px-4 py-2 pb-4 hover:bg-gray-100 flex">
             <p class="text-sm font-medium text-gray-800 leading-none">Support FAQ</p>

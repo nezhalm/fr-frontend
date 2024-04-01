@@ -1,4 +1,4 @@
-import {FishRequest} from "../request/fish-request.models";
+import {FishRequest} from "../request/recipient-request.models";
 
 export interface LevelResponse {
   code: number;

@@ -10,5 +10,8 @@ export interface Candidate {
   offer: {
     id: number;
   };
+  user: {
+    id: number;
+  };
 }
 

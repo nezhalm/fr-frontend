@@ -3,6 +3,7 @@ import {OfferService} from "../../services/offer/offer.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {JwtStorageService} from "../../services/jwt/jwt-storage.service";
 import {EmailService} from "../../services/email/email.service";
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-offer-applications',
@@ -40,16 +41,31 @@ export class OfferApplicationsComponent {
     const candidateEmail = 'aminfarida844@gmail.com'; // Remplacez ceci par l'e-mail du candidat
     this.emailService.sendEmail(candidateEmail).subscribe(
       () => {
-        console.log('E-mail sent successfully to', candidateEmail);
+        // Afficher un message de succès
+        Swal.fire({
+          icon: 'success',
+          title: 'E-mail envoyé !',
+          text: `L'e-mail a été envoyé avec succès à ${candidateEmail}.`,
+          confirmButtonColor: '#3085d6',
+          confirmButtonText: 'OK'
+        });
+        console.log('E-mail envoyé avec succès à', candidateEmail);
         // Ajoutez ici tout code supplémentaire à exécuter après l'envoi de l'e-mail
       },
       (error) => {
-        console.error('Error sending e-mail to', candidateEmail, ':', error);
+        // Afficher un message d'erreur
+        Swal.fire({
+          icon: 'success',
+          title: 'E-mail envoyé !',
+          text: `L'e-mail a été envoyé avec succès à ${candidateEmail}.`,
+          confirmButtonColor: '#3085d6',
+          confirmButtonText: 'OK'
+        });
+        console.error('Erreur lors de l\'envoi de l\'e-mail à', candidateEmail, ':', error);
         // Ajoutez ici la gestion des erreurs, si nécessaire
       }
     );
-  }
-  logout() {
+  }  logout() {
     // Effectuez les étapes de déconnexion ici
     this.jwtStorageService.removeUser();
     this.jwtStorageService.removeToken(); // Supprimez le jeton d'authentification

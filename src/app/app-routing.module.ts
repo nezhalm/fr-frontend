@@ -13,6 +13,8 @@ import {CandidatAuthGuard} from "./guards/candidat-auth.guard";
 import {CompanyAuthGuard} from "./guards/company-auth.guard";
 import {OfferApplicationsComponent} from "./components/offer-applications/offer-applications.component";
 import {CreateOfferComponent} from "./components/create-offer/create-offer.component";
+import {ChatMessagesComponent} from "./components/chat-messages/chat-messages.component";
+import {MyCandidacyComponent} from "./components/my-candidacy/my-candidacy.component";
 
 const routes: Routes = [
    {path: "login", component: LoginComponent, canActivate: [NoAuthGuard] },
@@ -22,11 +24,12 @@ const routes: Routes = [
    {path: 'error-404', component: Error404Component, canActivate: [NoAuthGuard]},
    {path: 'all-offers', component: AllOffersComponent, canActivate: [CandidatAuthGuard]},
    {path: 'company-offers', component: CompanyOffersComponent, canActivate: [CompanyAuthGuard]},
-   {path: 'create-profile/:id', component: CandidateUpplyComponent, canActivate: [CandidatAuthGuard]},
+   {path: 'apply-offer/:id', component: CandidateUpplyComponent, canActivate: [CandidatAuthGuard]},
   {path: 'details-condidats/:id', component: OfferApplicationsComponent, canActivate: [CompanyAuthGuard]},
   {path: 'create-offer', component: CreateOfferComponent, canActivate: [CompanyAuthGuard]},
+  {path: 'recruiter-chat', component: ChatMessagesComponent, canActivate: [CompanyAuthGuard]},
+  {path: 'my-candidacy', component: MyCandidacyComponent, canActivate: [CandidatAuthGuard]},
 
-  // {path: 'formQuiz', component: FormQuizComponent},
 ];
 
 @NgModule({

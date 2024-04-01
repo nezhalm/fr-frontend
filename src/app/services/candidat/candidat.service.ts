@@ -19,5 +19,11 @@ export class CandidatService {
     return this.http.get<any[]>(`${this.apiUrl}/candidat/list`);
   }
 
+  myCandidacy(id: number | undefined): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/candidat/candidats/user/${id}`);
+  }
+  deletePost(postId: number) {
+    return this.http.delete(`${this.apiUrl}/candidat/${postId}`);
+  }
 
 }

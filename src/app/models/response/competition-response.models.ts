@@ -1,4 +1,4 @@
-import {HuntingRequest} from "../request/hunting-request.models";
+import {HuntingRequest} from "../request/offer-request.models";
 import {RankingRequest} from "../request/ranking-request.models";
 
 export interface CompetitionResponse {

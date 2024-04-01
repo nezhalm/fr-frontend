@@ -21,6 +21,8 @@ import {HttpClientModule} from "@angular/common/http";
 import {AuthInterceptorProvider} from "./interceptors/auth.interceptor";
 import { OfferApplicationsComponent } from './components/offer-applications/offer-applications.component';
 import { CreateOfferComponent } from './components/create-offer/create-offer.component';
+import { ChatMessagesComponent } from './components/chat-messages/chat-messages.component';
+import { MyCandidacyComponent } from './components/my-candidacy/my-candidacy.component';
 
 
 @NgModule({
@@ -40,7 +42,9 @@ import { CreateOfferComponent } from './components/create-offer/create-offer.com
     AllOffersComponent,
     AllCompanyOffersComponent,
     OfferApplicationsComponent,
-    CreateOfferComponent
+    CreateOfferComponent,
+    ChatMessagesComponent,
+    MyCandidacyComponent
   ],
     imports: [
         BrowserModule,
